@@ -32,6 +32,8 @@ Der Server ist so ausgelegt, dass er das Modellmodul nutzt und darüber Menüstr
 - Einbindung des Jakarta-Validation-Modells (aus dem Projekt dinner_planner)
 - Eclipse-basierte Entwicklungsumgebung
 
+***
+
 🧩 Einsatz & Zweck
 
 Der Server dient als Grundlage für:
