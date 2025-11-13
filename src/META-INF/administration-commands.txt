@@ -1,0 +1,21 @@
+query-entities
+
+insert-person {"email": "a@b.de", "name":{"family":"Müller","given":"Someone"}, "address":{"city":"Berlin","country":"Deutschland","postcode":"10557","street":"Spreeweg 1"}}
+update-person {"identity":49,"version":1,"email":"a@b.de","group":"USER","name":{"given":"Martin", "title": null},"phones":["0172/12345678"]}
+delete-person 49
+
+insert-person {"email": "b@c.de", "name":{"family":"Müller","given":"Someone"}, "address":{"city":"Berlin","country":"Deutschland","postcode":"10557","street":"Spreeweg 1"}}
+update-person {"identity":50,"version":1,"email":"a@b.de","group":"USER","name":{"given":"Martin", "title": null},"phones":["0172/12345678"]}
+delete-person 50
+
+insert-document D:\baumeister\962-300-23 - web-applikationsentwicklung\media\track\deftones - dai the flu.mp3
+delete-document 72
+
+insert-recipe 3 { "title": "TEST TEST" }
+add-illustration 73 72
+add-ingredient 73 { "victual": { "identity": 28 }, "unit": "GRAM", "amount": 250 }
+add-ingredient 73 { "victual": { "identity": 5 }, "unit": "LITRE", "amount": 1.5 }
+
+remove-ingredient 73 74
+remove-illustration 73 72
+delete-recipe 73
