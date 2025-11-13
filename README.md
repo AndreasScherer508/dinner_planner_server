@@ -1,9 +1,9 @@
 📌 dinner_planner_server – REST-Backend
 
 Dieses Repository enthält den REST-Server des DinnerPlanner-Projekts.
-Er stellt die HTTP-Schnittstellen und die Geschäftslogik bereit, um auf das zugrunde liegende Datenmodell zuzugreifen.
+Er stellt die HTTP-Schnittstellen bereit und greift dabei auf die Geschäftslogik des Domain-Modells zu.
 
-Der Server nutzt das JPA-Domain-Modell aus dem verbundenen Projekt dinner_planner und stellt die Daten über JSON/HTTP zur Verfügung.
+Der Server nutzt das JPA-Domain-Modell aus dem verbundenen Projekt dinner_planner nd stellt die Daten über HTTP/JSON-Schnittstellen extern zur Verfügung.
 
 🔗 Zusammenhang der Module
 
