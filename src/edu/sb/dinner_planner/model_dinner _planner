@@ -20,15 +20,12 @@ import jakarta.validation.constraints.Size;
 import java.util.Collections;
 import java.util.Set;
 
-/**
- * JPA based entity type representing allergies.
- */
 @Entity
-@Table(schema="dinner_planner", name="Allergies")
-@PrimaryKeyJoinColumn(name="allergiesIdentity")
+@Table(schema="cookbook", name="Allergies")
+@PrimaryKeyJoinColumn(name="foodRestrictionIdentity")
 @DiscriminatorValue("Allergies")
 @JsonbVisibility(FieldPropertyStrategy.class)
-public class Allergies extends AbstractEntity {
+public class Allergies extends FoodRestriction {
     static public enum AllergyType { GLUTEN, NUT, EGG, OTHER }
 
     @JsonbProperty
@@ -43,16 +40,10 @@ public class Allergies extends AbstractEntity {
     @Column(nullable=false, updatable=true)
     private AllergyType allergyType;
 
-    @JsonbTransient
-    @NotNull
-    @OneToMany(mappedBy="allergies", cascade={CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.REMOVE})
-    private Set<FoodRestriction> foodRestrictions;
-
     public Allergies() {
         super();
         this.allergenName = null;
         this.allergyType = AllergyType.OTHER;
-        this.foodRestrictions = Collections.emptySet();
     }
 
     public String getAllergenName() {
@@ -69,9 +60,5 @@ public class Allergies extends AbstractEntity {
 
     public void setAllergyType(final AllergyType allergyType) {
         this.allergyType = allergyType;
-    }
-
-    public Set<FoodRestriction> getFoodRestrictions() {
-        return this.foodRestrictions;
     }
 }
